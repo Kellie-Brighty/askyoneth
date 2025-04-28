@@ -1,0 +1,1001 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap");
+
+:root {
+  --primary-color: #00f7ff;
+  --secondary-color: #711cf3;
+  --bg-color: #0c0c14;
+  --text-color: #ffffff;
+  --accent-color: #2d96ff;
+  --glow-color: rgba(0, 247, 255, 0.7);
+  --card-bg: rgba(0, 10, 20, 0.6);
+  --tag-bg: rgba(113, 28, 243, 0.3);
+  --stat-color: rgba(255, 255, 255, 0.6);
+  --high-impact: #ff4d4d;
+  --medium-impact: #ffaa00;
+  --low-impact: #44ff44;
+  --orbit-color-1: rgba(0, 247, 255, 0.4);
+  --orbit-color-2: rgba(113, 28, 243, 0.4);
+  --orbit-color-3: rgba(45, 150, 255, 0.4);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Orbitron", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Background Effects */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000"><circle cx="3" cy="3" r="1" fill="white" opacity="0.5"/></svg>');
+  background-size: 100px 100px;
+  animation: twinkle 10s linear infinite;
+  z-index: 1;
+}
+
+.star {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: twinkle-star 3s infinite ease-in-out;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(113, 28, 243, 0.3),
+    transparent 70%
+  );
+  z-index: 2;
+}
+
+/* Logo/Header */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0 4rem;
+  perspective: 1000px;
+}
+
+.ring-outer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(0, 247, 255, 0.1),
+    transparent
+  );
+  animation: rotate 20s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 50px var(--glow-color);
+}
+
+.ring-outer::before {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 247, 255, 0.3);
+  animation: pulse 2s ease-in-out infinite alternate;
+}
+
+.ring-inner {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 247, 255, 0.2),
+    transparent
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  transform-style: preserve-3d;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px var(--glow-color);
+  margin-bottom: 0.5rem;
+  position: relative;
+  animation: pulse-text 2s ease-in-out infinite alternate;
+}
+
+.tagline {
+  font-size: 0.8rem;
+  position: relative;
+  letter-spacing: 1px;
+  color: var(--text-color);
+  text-transform: uppercase;
+  opacity: 0.8;
+  animation: spin-words 5s linear infinite;
+}
+
+/* About Section */
+.about {
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 247, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.about p {
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+
+/* Prophecy Section - Temporal Nexus */
+.prophecy-section {
+  max-width: 1000px;
+  margin: 4rem auto;
+}
+
+.prophecy-section h2 {
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 15px var(--glow-color);
+  letter-spacing: 3px;
+}
+
+.nexus-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 247, 255, 0.2);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.nexus-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(0, 247, 255, 0.03),
+    transparent
+  );
+  z-index: -1;
+}
+
+/* Temporal Sphere */
+.temporal-sphere {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  flex-shrink: 0;
+  margin-right: 2rem;
+}
+
+.sphere-core {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px var(--glow-color);
+  animation: pulse-core 3s infinite alternate;
+}
+
+.orbit {
+  position: absolute;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 1px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orbit-1 {
+  width: 100px;
+  height: 100px;
+  border-color: var(--orbit-color-1);
+  animation: rotate-orbit 12s linear infinite;
+}
+
+.orbit-1::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  top: -5px;
+  left: 45px;
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+.orbit-2 {
+  width: 160px;
+  height: 160px;
+  border-color: var(--orbit-color-2);
+  animation: rotate-orbit 20s linear infinite reverse;
+}
+
+.orbit-2::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  top: 76px;
+  left: -4px;
+  box-shadow: 0 0 10px var(--secondary-color);
+}
+
+.orbit-3 {
+  width: 220px;
+  height: 220px;
+  border-color: var(--orbit-color-3);
+  animation: rotate-orbit 30s linear infinite;
+}
+
+.orbit-3::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  bottom: -6px;
+  left: 104px;
+  box-shadow: 0 0 10px var(--accent-color);
+}
+
+/* Prophecy Viewer */
+.prophecy-viewer {
+  flex: 1;
+  background: rgba(0, 10, 20, 0.7);
+  border-radius: 15px;
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 247, 255, 0.15);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  min-height: 300px;
+}
+
+.viewer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(0, 247, 255, 0.1);
+  padding-bottom: 1rem;
+}
+
+.viewer-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 10px var(--glow-color);
+}
+
+.profile-info h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.handle {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.temporal-coordinates {
+  text-align: right;
+}
+
+.date-display {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.timeline-position {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.arrow {
+  color: var(--primary-color);
+}
+
+.target-year {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.viewer-content {
+  font-size: 1rem;
+  line-height: 1.6;
+  padding: 0.5rem 0;
+  min-height: 80px;
+}
+
+.viewer-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.viewer-tags .tag {
+  background: var(--tag-bg);
+  color: var(--text-color);
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(0, 247, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.viewer-tags .tag:hover {
+  background: rgba(113, 28, 243, 0.5);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.event-details {
+  display: flex;
+  gap: 2rem;
+  margin: 0.5rem 0;
+}
+
+.probability-container,
+.impact-container {
+  flex: 1;
+}
+
+.probability-label,
+.impact-label {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+.probability-meter {
+  height: 6px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.3rem;
+}
+
+.probability-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+  border-radius: 3px;
+  width: 0%;
+  transition: width 0.8s ease-in-out;
+}
+
+.probability-value {
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  text-align: right;
+  font-weight: 500;
+}
+
+.impact-value {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+.impact-areas {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.impact-area {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.viewer-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 247, 255, 0.1);
+  color: var(--stat-color);
+  font-size: 0.9rem;
+}
+
+.viewer-stats span {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all 0.3s ease;
+}
+
+.viewer-stats span:hover {
+  color: var(--primary-color);
+}
+
+/* Prophecy Nodes */
+.prophecy-nodes {
+  margin: 2rem 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  border: 1px solid rgba(0, 247, 255, 0.1);
+}
+
+.node-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  min-height: 120px;
+  position: relative;
+}
+
+.prophecy-node {
+  width: 80px;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.prophecy-node:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--glow-color);
+}
+
+.node-icon {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  z-index: 1;
+}
+
+.node-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+.node-date {
+  position: absolute;
+  bottom: -20px;
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+.node-category-geopolitics .node-glow {
+  background: radial-gradient(circle at center, #ff6b6b, transparent 70%);
+}
+
+.node-category-technology .node-glow {
+  background: radial-gradient(circle at center, #4ecdc4, transparent 70%);
+}
+
+.node-category-natural .node-glow {
+  background: radial-gradient(circle at center, #f9dc5c, transparent 70%);
+}
+
+.node-category-financial .node-glow {
+  background: radial-gradient(circle at center, #9d65c9, transparent 70%);
+}
+
+.node-active {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 15px var(--glow-color);
+  transform: scale(1.1);
+}
+
+/* Nexus Controls */
+.nexus-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.filter-controls {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 247, 255, 0.1);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: rgba(0, 0, 0, 0.5);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.time-navigation {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.time-nav-btn {
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.time-nav-btn:hover {
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 10px var(--glow-color);
+}
+
+.time-display {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  min-width: 60px;
+  text-align: center;
+}
+
+.temporal-action {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.connect-btn {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  background: linear-gradient(
+    45deg,
+    var(--secondary-color),
+    var(--accent-color)
+  );
+}
+
+/* Features */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.feature-block {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 1.5rem;
+  min-width: 300px;
+  flex: 1;
+  max-width: 500px;
+  border: 1px solid rgba(0, 247, 255, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.feature-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-color: rgba(0, 247, 255, 0.3);
+}
+
+.feature-block h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* Contract Address */
+.ca-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#contract-address {
+  flex: 1;
+  padding: 0.75rem;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 247, 255, 0.2);
+  color: var(--text-color);
+  border-radius: 5px;
+  font-family: "Orbitron", monospace;
+}
+
+.glow-button {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(
+    45deg,
+    var(--secondary-color),
+    var(--accent-color)
+  );
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.glow-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px var(--glow-color);
+}
+
+.chart-button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#copy-notification {
+  display: none;
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+/* Social Links */
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 1rem;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 247, 255, 0.1);
+}
+
+.social-link i {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.social-link:hover {
+  transform: translateY(-5px);
+  background: rgba(0, 0, 0, 0.5);
+  border-color: var(--primary-color);
+}
+
+/* Ethereum Icons */
+.ethereum-icons {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.eth-icon {
+  position: absolute;
+  opacity: 0.2;
+}
+
+.eth-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.eth-1 {
+  width: 150px;
+  height: 150px;
+  top: 20%;
+  left: 10%;
+  animation: float 15s ease-in-out infinite;
+}
+
+.eth-2 {
+  width: 100px;
+  height: 100px;
+  bottom: 15%;
+  right: 10%;
+  animation: float 12s ease-in-out 2s infinite;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.05);
+    opacity: 0.7;
+  }
+}
+
+@keyframes pulse-text {
+  0% {
+    text-shadow: 0 0 10px var(--glow-color);
+  }
+  100% {
+    text-shadow: 0 0 20px var(--glow-color), 0 0 30px var(--glow-color);
+  }
+}
+
+@keyframes pulse-core {
+  0% {
+    box-shadow: 0 0 5px var(--glow-color);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    box-shadow: 0 0 20px var(--glow-color), 0 0 40px var(--glow-color);
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+@keyframes rotate-orbit {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-words {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes twinkle-star {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .nexus-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .temporal-sphere {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-container {
+    margin: 1rem 0 2rem;
+  }
+
+  .ring-outer {
+    width: 220px;
+    height: 220px;
+  }
+
+  .ring-outer::before {
+    width: 240px;
+    height: 240px;
+  }
+
+  .ring-inner {
+    width: 180px;
+    height: 180px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .socials {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .social-link {
+    width: 80%;
+  }
+
+  .nexus-controls {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .filter-controls {
+    justify-content: center;
+  }
+
+  .event-details {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .viewer-stats {
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: space-around;
+  }
+
+  .temporal-sphere {
+    width: 200px;
+    height: 200px;
+  }
+
+  .orbit-3 {
+    width: 180px;
+    height: 180px;
+  }
+
+  .orbit-3::before {
+    left: 84px;
+  }
+}
