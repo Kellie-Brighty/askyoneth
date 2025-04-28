@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASKYON - The Seer From The Future</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="stars"></div>
+    <div class="overlay"></div>
+    <div class="container">
+      <header>
+        <div class="logo-container">
+          <div class="ring-outer">
+            <div class="ring-inner">
+              <h1 class="title">ASKYON</h1>
+              <div class="tagline">THE SEER FROM THE FUTURE</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="about">
+        <p>
+          Askyon, the mysterious figure hailed as a seer of the future, is
+          quickly going viral on X—drawing attention from major influencers and
+          poised to become a trending topic in the days ahead.
+        </p>
+      </section>
+
+      <!-- New Prophecy Timeline Section -->
+      <section class="prophecy-section">
+        <h2>Temporal Nexus</h2>
+
+        <div class="nexus-container">
+          <div class="temporal-sphere">
+            <div class="sphere-core"></div>
+            <div class="orbit orbit-1"></div>
+            <div class="orbit orbit-2"></div>
+            <div class="orbit orbit-3"></div>
+          </div>
+
+          <div class="prophecy-viewer">
+            <div class="viewer-header">
+              <div class="viewer-profile">
+                <img
+                  src="askyon-profile.png"
+                  alt="Askyon Profile"
+                  class="profile-img"
+                />
+                <div class="profile-info">
+                  <h3>Askyon</h3>
+                  <span class="handle">@askyon_official</span>
+                </div>
+              </div>
+              <div class="temporal-coordinates">
+                <div class="date-display"></div>
+                <div class="timeline-position">
+                  <span class="current-year">2023</span>
+                  <span class="arrow">→</span>
+                  <span class="target-year"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="viewer-content"></div>
+            <div class="viewer-tags"></div>
+
+            <div class="event-details">
+              <div class="probability-container">
+                <div class="probability-label">Probability</div>
+                <div class="probability-meter">
+                  <div class="probability-fill"></div>
+                </div>
+                <div class="probability-value"></div>
+              </div>
+
+              <div class="impact-container">
+                <div class="impact-label">Impact Level</div>
+                <div class="impact-value"></div>
+                <div class="impact-areas"></div>
+              </div>
+            </div>
+
+            <div class="viewer-stats">
+              <span
+                ><i class="far fa-comment"></i>
+                <span class="comment-count">0</span></span
+              >
+              <span
+                ><i class="fas fa-retweet"></i>
+                <span class="retweet-count">0</span></span
+              >
+              <span
+                ><i class="far fa-heart"></i>
+                <span class="like-count">0</span></span
+              >
+              <span
+                ><i class="far fa-chart-bar"></i>
+                <span class="view-count">0</span></span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="prophecy-nodes">
+          <div class="node-container">
+            <!-- Nodes will be dynamically created here -->
+          </div>
+        </div>
+
+        <div class="nexus-controls">
+          <div class="filter-controls">
+            <button class="filter-btn active" data-category="all">
+              All Events
+            </button>
+            <button class="filter-btn" data-category="geopolitics">
+              Geopolitics
+            </button>
+            <button class="filter-btn" data-category="technology">
+              Technology
+            </button>
+            <button class="filter-btn" data-category="natural">
+              Natural Events
+            </button>
+            <button class="filter-btn" data-category="financial">
+              Financial
+            </button>
+          </div>
+
+          <div class="time-navigation">
+            <button class="time-nav-btn" id="prev-year">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="time-display">2025</div>
+            <button class="time-nav-btn" id="next-year">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="temporal-action">
+          <a
+            href="https://x.com/askyon_official"
+            target="_blank"
+            class="glow-button connect-btn"
+          >
+            <i class="fas fa-satellite-dish"></i> Connect to Temporal Stream
+          </a>
+        </div>
+      </section>
+
+      <section class="features">
+        <div class="feature-block ca-block">
+          <h2>Contract Address</h2>
+          <div class="ca-container">
+            <input
+              type="text"
+              id="contract-address"
+              value="0xbafdc472c99a5fb2e61bada65d0cc9e1f567d6a1"
+              readonly
+            />
+            <button id="copy-ca" class="glow-button">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+          </div>
+          <div id="copy-notification">Copied to clipboard!</div>
+        </div>
+
+        <div class="feature-block">
+          <a href="#" class="chart-button glow-button">
+            <i class="fas fa-chart-line"></i> View Chart
+          </a>
+        </div>
+      </section>
+
+      <section class="socials">
+        <a
+          href="https://x.com/askyon_official"
+          target="_blank"
+          class="social-link"
+        >
+          <i class="fab fa-x-twitter"></i>
+          <span>Follow on X</span>
+        </a>
+        <a href="#" target="_blank" class="social-link">
+          <i class="fab fa-telegram"></i>
+          <span>Join Telegram</span>
+        </a>
+      </section>
+    </div>
+
+    <div class="ethereum-icons">
+      <div class="eth-icon eth-1">
+        <img src="ethereum.svg" alt="Ethereum" />
+      </div>
+      <div class="eth-icon eth-2">
+        <img src="ethereum.svg" alt="Ethereum" />
+      </div>
+    </div>
+  </body>
+</html>
